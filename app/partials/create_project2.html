@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+<!-- main container starts -->
+<div class="mainContainer">
+
+    <!-- inside container -->
+    <div class="container">
+
+        <modal-dialog show='showEUA' dialog-title='TrustCloud End User Agreement'>
+            <p ng-bind-html="eua_text"></p>
+        </modal-dialog>
+
+
+        <!-- Title & Title paragraph starts -->
+        <div class="row">
+            <h1 class="titleText">Step 2: Tell us about yourself.</h1>
+            <h4 class="bodyText">In order for us to offer you a PeerProtect<sup>TM</sup> service guarantee,
+                we'll need to know a little<br>
+                more about you. Please fill out the following information as accurately as possible.
+            </h4>
+        </div>
+        <!-- Title & Title paragraph ends -->
+
+
+        <!-- form container starts -->
+
+
+        <div class="formContainer">
+            <form name="form" ng-submit="createNewProject()">
+
+                <!-- form row 1 starts -->
+                <div class="row">
+                        <div class="col-md-6 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.user.firstname"
+                                   placeholder="First Name" required>
+                        </div>
+                        <div class="col-md-6 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.user.lastname"
+                                   placeholder="Last Name" required>
+                        </div>
+
+                </div>
+                <!-- form row 1 ends -->
+
+
+                <!-- form row 2 starts -->
+                <div class="row">
+                        <div class="col-md-12 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.user.address1"
+                                   placeholder="Address">
+                        </div>
+                </div>
+                <!-- form row 2 ends -->
+
+
+                <!-- form row 4 starts -->
+                <div class="row">
+                        <div class="col-md-6 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.user.city"
+                                   placeholder="City">
+                        </div>
+                        <div class="col-md-3 mb3p">
+                            <select class="form-control input-small" data-role="listview" data-inset="true"
+                                    ng-options="state.name as state.value for state in states"
+                                    ng-model="project.user.state" placeholder="State" style="color:#A8A8A8"></select>
+                        </div>
+
+                        <div class="col-md-3 mb3p">
+                            <input type="text" class="form-control input-medium" ng-model="project.user.zip"
+                                   placeholder="Zip">
+                        </div>
+
+                </div>
+                <!-- form row 4 ends -->
+
+
+                <!-- form row 3 starts -->
+                <div class="row">
+
+                        <div class="col-md-6 mb3p">
+                            <input type="email" class="form-control input-large" ng-model="project.user.email"
+                                   placeholder="Email" required>
+                        </div>
+                        <div class="col-md-6 mb3p">
+                            <input type="text" min="10" ng-minlength="10" class="form-control input-large"
+                                   name="user_phone" ng-model="project.user.phone"
+                                   placeholder="Phone"
+                                   ui-mask="{{'(999) 999-9999'}}" >
+
+                            <p class="text-error ng-hide" ng-show="form.provider_phone.$error.tel">
+                                Enter 10-digit phone number in format (999) 999-9999</p>
+
+                        </div>
+
+                </div>
+                <!-- form row 3 ends -->
+
+
+                <div style="padding-top:20px"></div>
+
+                <div class="row">
+
+
+                    <div class="row">
+
+                        <div class="col-md-11">
+                            <input type="checkbox" required
+                                   ng-model="user.agreed"
+                                   name="user_agreed"
+                                   ng-change="checked_agreement()" style="margin-left:7%; margin-bottom:-30%"><h6
+                                style="padding-left:12%; margin-top:1%">By checking this box you are agreeing to
+                            the <b><a ng-click="show_eua()">TrustCloud End User Agreement</a></b></h6></div>
+
+                    </div>
+				<span class="text-error" style="padding-left:75px" ng-show="form_submitted && !user_agreed">
+                    You must agree to the end user agreement<br></span>
+
+
+                    <div style="padding-top:7px"></div>
+
+
+
+                    <div id="outer" ng-show="processing">
+                        <div id="inner2" style="background-color:#fff;padding: 20px;opacity:1;border-radius: 10px; margin-left:191px;margin-right: 193px;text-align:center">
+                            <div>
+                                <div id="tc_logo">
+                                    <img src="../../Content/images/loading-spinner.gif">
+                                </div>
+                                <div id="tc_tit">Submitting Project Details...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+		 <div style="padding-top:20px"></div>
+
+
+
+                    <div class="btnBox">
+                        <div style="margin-left:-47px">
+                            <a class="btn btnGetStarted" href="#/step1"
+                               style="padding-left:30px;padding-right:30px;">Back</a>
+
+                            <input type="submit" class="btn btnGetStarted"
+                                   ng-click="clicked_submit()"
+                                   style="padding-left:30px;padding-right:30px;margin-top:-2px;margin-left:9px"
+                                   value="Finish"/>
+                        </div>
+                    </div>
+                    <!-- form container ends -->
+                </div>
+            </form>
+        </div>
+
+        <!-- main container ends -->
+    </div>
+</div>
+

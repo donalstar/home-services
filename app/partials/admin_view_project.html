@@ -1,0 +1,322 @@
+<div class="footer-widgets">
+
+
+    <div class="wrap">
+
+        <div ng-switch on="loginStatus">
+            <div ng-switch-when="true">
+
+
+                <div class="well" style="margin-left: 10px; margin-right: 10px">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <button type="button" class="btn btn-primary"
+                                    style="width:200px"
+                                    ng-click="back_to_list()">
+                                Back to Project List
+                            </button>
+                        </div>
+                        <div class="col-md-5" style="text-align: right;">
+                            <strong>Welcome, {{loggedInUser}}</strong>
+                            &nbsp;&nbsp;&nbsp;<a href="" style="color:inherit;">
+                            <button type="button" class="btn btn-primary" style="width:100px"
+                                    ng-click="logout()">Logout
+                            </button>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="outer" ng-show="processing">
+                    <div id="inner2" style="margin-left: 45%;
+                                            margin-top: 15%;
+                                            position: absolute;">
+                        <div>
+                            <div id="tc_logo" style="margin-left:60px">
+                                <img src="../../Content/images/loading-spinner.gif">
+                            </div>
+                            <div id="tc_tit">Loading Project Details...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container full_width" ng-if="processing == false">
+
+                    <div class="row centered-form">
+                        <div id="frmIDCheck">
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><strong>Project
+                                        Id:</strong> <strong>{{project.Id}} &nbsp; Created: {{project.create_date |
+                                        dt}}</strong></h4>
+                                </div>
+
+                                <div class="panel-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Job Type</label>
+                                                    {{project.job.type}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Cost</label>
+
+                                                    <p>${{project.job.cost}}.00</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Start Date</label>
+
+                                                    <p>{{project.job.startdate | dt}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Status</label>
+
+                                                    <p>{{project.status}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Description</label>
+
+                                                    <p>{{project.job.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- block 1 starts -->
+                                        <!-- provider details starts -->
+                                        <div class="row">
+                                            <div class="panel panel-default col-md-6">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title"><strong>Provider Details</strong></h4>
+                                                </div>
+                                                <div class="panel-body">
+
+                                                    <!-- 6 fields row 1 starts -->
+
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Name</label>
+
+                                                                <p>{{project.provider.name}}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Phone</label>
+
+                                                                <p>{{project.provider.phone | tel}}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Owner</label>
+
+                                                                <p>{{project.provider.ownername}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">E-mail Address</label>
+
+                                                                <p>{{project.provider.email}}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Address</label>
+
+                                                                <p>{{project.provider.address1}}
+
+                                                                    {{project.provider.address2}}<br/>
+
+                                                                    {{project.provider.city}}<br/>
+
+                                                                    {{project.provider.state}} {{project.provider.zip}}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Trustcheck Status</label>
+
+                                                                <p>{{project.provider.status}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 6 fields row 2 ends -->
+                                            </div>
+                                            <!-- block 1 ends -->
+
+
+                                            <!-- block 2 starts-->
+                                            <div class="panel panel-default  col-md-6">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title"><strong>Customer Details</strong></h4>
+                                                </div>
+                                                <div class="panel-body">
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Name</label>
+
+                                                                <p>{{project.user.firstname}}
+                                                                    {{project.user.lastname}}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Phone</label>
+
+                                                                <p>{{project.user.Phone | tel}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">E-mail Address</label>
+
+                                                                <p>{{project.user.Email}}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Address</label>
+
+                                                                <p>{{project.user.address1}}
+
+                                                                    {{project.user.address2}}<br/>
+
+                                                                    {{project.user.city}}</br>
+
+                                                                    {{project.user.state}} {{project.user.zip}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div ng-switch on="project.status">
+                                                <div ng-switch-when="Pending">
+                                                    <div style="margin: 0 auto 5px; text-align:right; padding-right:15px">
+
+                                                        <button type="button" class="btn btn-primary"
+                                                                style="width:150px; margin-right:30px"
+                                                                data-loading-text="processing..." ng-click="approve()">
+                                                            Approve
+                                                        </button>
+
+                                                        <button type="button" class="btn btn-primary"
+                                                                style="width:150px"
+                                                                data-loading-text="processing..." ng-click="decline()">
+                                                            Decline
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+
+                                                <div ng-switch-when="Approved">
+                                                    <div style="margin: 0 auto 5px; text-align:right; padding-right:105px">
+                                                        <button type="button" class="btn btn-primary"
+                                                                style="width:150px"
+                                                                data-loading-text="processing..." ng-click="reopen()">
+                                                            Re-open
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div ng-switch-when="Declined">
+                                                    <div style="margin: 0 auto 5px; text-align:right; padding-right:105px">
+                                                        <button type="button" class="btn btn-primary"
+                                                                style="width:150px"
+                                                                ng-click="reopen()">Re-open
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-default>
+                <p>You need to <a href="#/admin">log in</a> first</p>
+            </div>
+        </div>
+
+
+        <div class="container full_width" ng-show="loginStatus">
+            <div class="panel panel-default notes-width">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><strong>Notes</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                                <textarea ng-model="note" placeholder="Note"
+                                          style='width:100%' rows="5"></textarea><br/><br/>
+                                <button type="button" class="btn btn-primary"
+                                        style="width:150px"
+                                        data-loading-text="processing..." ng-click="add_note();">
+                                    Add Note
+                                </button>
+                            </form>
+                            <br/><br/>
+
+                            <div class="well2" style="margin-left: 10px; margin-right: 10px"
+                                 ng-repeat="item in note_data">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            {{item.date | date:'dd-MMM-yyyy HH:mm'}}
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{ item.value }}
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button" class="btn btn-primary"
+                                                    style="width:150px;float: right;"
+                                                    ng-click="delete_note($index);">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+

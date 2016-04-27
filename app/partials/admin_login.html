@@ -1,0 +1,48 @@
+<h3>{{ message }}</h3>
+
+<div class="container" style="width:400px; padding-top:50px">
+    <div class="row centered-form">
+        <div id="frmLogin">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Home Services Admin - Login</h3>
+                </div>
+                <div class="panel-body">
+                    <form name="registrationForm" novalidate
+                          ng-submit="submit(registrationForm.$valid)">
+                        <div class="alert alert-success" style="display: none;"></div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label class="control-label">User Name:</label>
+
+                                    <input type="text" name="username" class="form-control input-sm"
+                                           ng-model="user.username" placeholder="User Name" tabindex="1" required/>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label class="control-label">Password:</label>
+
+                                    <input type="password" name="password" class="form-control input-sm"
+                                           ng-model="user.password" placeholder="Password" tabindex="1" required/>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="well" style="margin: 0 auto 5px; text-align:right">
+                            <button type="submit" class="btn btn-primary" style="width:150px">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

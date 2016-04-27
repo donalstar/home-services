@@ -1,0 +1,75 @@
+<div ng-if="newProject == true">
+    <div><p>Failed to locate project data</p></div>
+</div>
+
+<div id="outer" ng-show="processing">
+    <div id="inner2" style="margin-left: 43%;
+							margin-top: 14%;
+							position: absolute;background-color: #fff;z-index: 99999999;border-radius: 10px;padding: 20px;">
+        <div>
+            <div id="tc_logo" style="margin-left:60px">
+                <img src="../../Content/images/loading-spinner.gif">
+            </div>
+            <div id="tc_tit">Loading Project Details...
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- main container starts -->
+<div class="mainContainer" ng-if="(newProject != true) && (processing == false)">
+
+    <!-- inside container -->
+    <div class="container">
+
+
+        <div id="outer" ng-show="processing">
+            <div id="inner2" style="margin-left: 43%;
+							margin-top: 14%;
+							position: absolute;background-color: #fff;z-index: 99999999;border-radius: 10px;padding: 20px;">
+                <div>
+                    <div id="tc_logo" style="margin-left:60px">
+                        <img src="../../Content/images/loading-spinner.gif">
+                    </div>
+                    <div id="tc_tit">Loading Project Details...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Title & Title paragraph starts -->
+    <div class="row">
+        <h1 class="titleText"><b>Thank You!</b></h1>
+
+        <h2 class="titleText">Here are the details of your project:</h2>
+    </div>
+    <br>
+    <!-- Title & Title paragraph ends -->
+
+    <div class="row projSummaryText">Project Type:
+        <span class="projSummaryTextBlue">{{project.job.type}}</span></div>
+    <div class="row projSummaryText">Business/Contractor:
+        <span class="projSummaryTextBlue">{{project.provider.name}}</span></div>
+    <div class="row projSummaryText">Cost Estimate:
+        <span class="projSummaryTextBlue">{{project.job.cost | currency}}</span></div>
+    <div class="row projSummaryText"
+         ng-if="project.job.startdateraw">Start Date:
+        <span class="projSummaryTextBlue">{{project.job.startdateraw | dt}}</span>
+    </div>
+    <div class="row projSummaryText"
+         ng-if="project.job.startdate">Start Date:
+        <span class="projSummaryTextBlue">{{project.job.startdate | dt}}</span>
+    </div>
+
+    <br><br>
+
+    <h3 class="projSummaryText">We need to learn a little more about this particular contractor before certifying
+        them for a PeerProtect guarantee.<br> We'll get back to you within 1 business day with the certification details
+        and, if your contractor passes, a link to purchase your PeerProtect service guarantee.</h3>
+</div>
+
+<!-- main container ends -->
+
+

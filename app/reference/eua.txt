@@ -1,0 +1,39 @@
+﻿<p><b>TrustCloud End-User Agreement</b></p>
+
+<div id="" style="overflow-y:scroll; height:400px;">
+<p>
+<b>RESTRICTED LICENSE.</b> TrustCloud hereby grants to Customer a restricted license to use the TrustCloud Services and
+any data contained therein, subject to the restrictions and limitations set forth below:
+
+<p>
+<b>(i) Generally.</b> TrustCloud grants to Customer a restricted license to use the TrustCloud Services solely for Customer’s
+own personal use. Customer represents and warrants that its use of the TrustCloud Services shall be for lawful personal
+use and not for any other purpose, including, without limitation, commercial, collections, governmental, marketing or
+advertising. Customer shall not use the TrustCloud Services for marketing purposes or resell or broker the TrustCloud
+Services to any third party. Customer agrees that if TrustCloud or TrustCloud’s third party data providers
+(“Third Party Data Providers”) determine or reasonably suspects that Customer is engaging in commercial, marketing
+
+<p>
+<b>(ii) Public Records Products Services.</b> The TrustCloud Services are not provided by “consumer reporting agencies,” as that term is defined in the federal Fair Credit Reporting Act, (15 U.S.C. 1681, et seq.), (the “FCRA”), and do not constitute Consumer Reports. Accordingly, the TrustCloud Services may not be used in whole or in part as a factor in determining eligibility for credit, insurance, employment or another purpose in connection with which a consumer report may be used under the FCRA. Further, (A) Customer certifies that it will not use any of the information it receives through the TrustCloud Services to determine, in whole or in part an individual’s eligibility for any of the following products, services or transactions: (1) credit or insurance to be used primarily for personal, family or household purposes; (2) employment purposes; (3) a license or other benefit granted by a government agency; or (4) any other product, service or transaction in connection with which a consumer report may be used under the FCRA or any similar state statute, including without limitation apartment rental, check-cashing, or the opening of a deposit or transaction account.
+
+<p>
+<b>2. SECURITY.</b> Customer acknowledges that the information available through the TrustCloud Services may include personally identifiable information and it is Customer’s obligation to keep all such accessed information confidential and secure. Customer shall purge all information received through the TrustCloud Services and stored electronically or on hard copy by Customer within ninety (90) days of initial receipt of such data.
+
+<p>
+<b>3. PERFORMANCE.</b> Customer accepts all information "AS IS." Customer acknowledges and agrees that TrustCloud obtains their data from third-party sources, which may or may not be completely thorough and accurate, and that Customer shall not rely on TrustCloud for the accuracy or completeness of information supplied through the TrustCloud Services. Customer understands that Customer may be restricted from accessing certain TrustCloud Services which may be otherwise available. TrustCloud reserves the right to add materials and features to, and to discontinue offering any of the materials and features that are currently a part of, the TrustCloud Services. In the event that any entity within TrustCloud discontinues a material portion of the materials and features that Customer regularly uses in the ordinary course of its business, and such materials and features are part of a flat fee subscription plan to which Customer has subscribed, such TrustCloud entity will, at Customer’s option, terminate this Agreement.
+
+<p>
+<b>4. WARRANTIES/LIMITATION OF LIABILITY.</b> Neither any entity of TrustCloud, nor their subsidiaries and affiliates, nor any Third Party Data provider (for purposes of indemnification, warranties, and limitations on liability, TrustCloud, their subsidiaries and affiliates, and their Third Party Data providers are hereby collectively referred to as “TrustCloud”) shall be liable to Customer (or to any person claiming through Customer to whom Customer may have provided data from the TrustCloud Services) for any loss or injury arising out of or caused in whole or in part by TrustCloud 's acts or omissions in procuring, compiling, collecting, interpreting, reporting, communicating, or delivering the TrustCloud Services.
+
+<p>
+<b>5. INDEMNIFICATION.</b> Customer hereby agrees to protect, indemnify, defend, and hold harmless TrustCloud from and against any and all costs, claims, demands, damages, losses, and liabilities (including attorneys' fees and costs) arising from or in any way related to use of information received by Customer (or any third party receiving such information from or through Customer) furnished by or through TrustCloud.
+
+<p>
+<b>6. LIQUIDATED DAMAGES.</b> Customer agrees that if it improperly uses or discloses any of the data contained in the TrustCloud Services it would be impracticable or extremely difficult to fix the actual damages resulting to TrustCloud and its Third Party Data Providers. Therefore, Customer agrees to pay to the TrustCloud and/or its Third Party Data Provider the sum of One Hundred Dollars ($100.00) per record contained in the TrustCloud Services that I improperly uses or disclose in violation of the terms and conditions contained in this Agreement.
+
+<p>
+<b>7. AUDIT.</b> Customer understands and agrees that in order to ensure compliance the terms and conditions of this Agreement, and TrustCloud’s obligations under its contracts with its data providers, TrustCloud or Third Party Data Providers may conduct periodic reviews of Customer’s use of the TrustCloud Services and may, upon reasonable notice, audit Customer’s records, processes and procedures related to Customer’s use, storage and disposal of TrustCloud Services and information received there from. Customer agrees to cooperate fully with any and all audits. Violations discovered in any review and/or audit by TrustCloud or Third Party Data Provider will be subject to immediate action including, but not limited to, suspension or termination of the license to use the TrustCloud Services or legal action.
+
+
+
+</div>

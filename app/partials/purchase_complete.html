@@ -1,0 +1,126 @@
+<style type="text/css">
+    @media print{
+    body{ background-color:#FFFFFF; background-image:none; color:#000000 }
+    #header{ display:none;}
+    #footer{ display:none;}
+    #contentarea{ width:100%;}
+    }
+</style>
+
+<div id="outer" ng-show="processing">
+    <div id="inner2" style="margin-left: 45%;
+							margin-top: 15%;
+							position: absolute;background-color:#fff;padding: 20px;opacity:1;border-radius: 10px; margin-left:191px;margin-right: 193px;text-align:center">
+        <div>
+            <div id="tc_logo" style="margin-left:60px">
+                <img src="../../Content/images/loading-spinner.gif">
+            </div>
+            <div id="tc_tit">Loading Project Details...
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ng-if="(validProject == false) && (processing == false)">
+    <div><p>Failed to locate project data</p></div>
+</div>
+
+<div class="mainContainer" ng-if="(validProject == true) && (processing == false) && (payment_status == 'cancelled')">
+    <!-- inside container -->
+    <div class="container">
+
+        <!-- Title & Title paragraph starts -->
+        <div class="row">
+            <h1 class="titleText"><b>Payment cancelled!</b></h1>
+
+            <h2 class="titleText">Are you sure?</h2>
+            <h3 class="titleText">Have another look at your
+                <a ng-href="#/cert_success/{{project.Id}}">TrustCloud Service Guarantee details:</a></h3>
+        </div>
+    </div>
+</div>
+
+<!-- main container starts -->
+<div class="mainContainer" ng-if="(validProject == true) && (processing == false) && (payment_status == 'paid')">
+
+    <!-- inside container -->
+    <div class="container">
+
+        <!-- Title & Title paragraph starts -->
+        <div class="row">
+            <h1 class="titleText"><b>You're Covered.</b></h1>
+
+            <h2 class="titleText">Here are the details of your Satisfaction Guarantee:</h2>
+            <h4 align="center">Click <A HREF="javascript:window.print()">here</A>
+                to print your guarantee.</h4>
+        </div>
+        <br/>
+        <!-- Title & Title paragraph ends -->
+
+
+        <!-- Project summary starts -->
+        <div class="row projSummaryText">Project Type: <span class="projSummaryTextBlue">{{project.job.type}}</span>
+        </div>
+        <div class="row projSummaryText">Business/Contractor: <span class="projSummaryTextBlue">{{project.provider.name}}</span>
+        </div>
+        <div class="row projSummaryText">Cost Estimate: <span class="projSummaryTextBlue">{{project.job.cost | currency}}</span>
+        </div>
+        <div class="row projSummaryText">Coverage Effective Date: <span class="projSummaryTextBlue">{{project.job.startdate | dt}}</span>
+        </div>
+        <!-- Project summary ends -->  <br><br>
+
+
+        <!-- sharer area starts -->
+        <div class="row sharerBox">
+            <p class="projSummaryText">Share your {{project.job.type}} job with your friends!</p>
+
+            <div class="col-md-6">
+                <a href="javascript:void(0);" ng-click="share('facebook')" class="sharer facebook big">
+                    <div class="icon"></div>
+                    Share on Facebook</a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="javascript:void(0);" ng-click="share('twitter')" class="sharer twitter big">
+                    <div class="icon"></div>
+                    Share on Twitter</a>
+            </div>
+        </div>
+        <!-- sharer area ends-->
+
+
+        <!-- bottom text area starts-->
+        <div class="row">
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8">
+
+                <h2 class="titleText">Remember, Here's How The PeerProtect Guarantee Works</h2>
+
+                <div class="textBox1">
+
+                    <p>If for any reason, {{project.provider.name}}'s work falls short of your expectations, TrustCloud
+                        will make it right. </p>
+
+                    <p>Your guarantee is in effect as of {{project.job.startdate | dt}} and continues for
+                        {{period_to_file}} days
+                        thereafter. Claims must be filed within that period. You are covered for up to the cost of job,
+                        {{project.job.cost | currency}}. We may require proof of work and payment to
+                        {{project.provider.name}}.
+                    </p><br/>
+
+                    <p> If you need to make a claim, call us at {{project.support_phone}}. </p>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-2"></div>
+            <!-- bottom text area ends-->
+
+
+        </div>
+        <!-- main container ends -->
+

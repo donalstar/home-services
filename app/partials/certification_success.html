@@ -1,0 +1,155 @@
+<div id="outer" ng-show="processing">
+    <div id="inner2" style="margin-left: 40%;
+							margin-top: 20%;
+							position: absolute;z-index: 9999999999;">
+        <div style="background-color:#fff;padding: 20px;opacity:1;border-radius: 10px">
+            <div id="tc_logo" style="text-align:center">
+                <img src="../../Content/images/loading-spinner.gif">
+            </div>
+            <div id="tc_tit">Loading Project Details...
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="(validProject == false) && (processing == false)">
+    <div><p>Failed to locate project data</p></div>
+</div>
+
+
+<modal-dialog show='showTandC' dialog-title='PEER PROTECT TERMS AND CONDITIONS'>
+    <p ng-bind-html="t_and_c_text"></p>
+</modal-dialog>
+
+<div class="mainContainer" ng-if="project.status != 'Approved'">
+    <div class="container">
+
+        <!-- Title & Title paragraph starts -->
+        <div class="row">
+            <h2 class="titleText"><b>Your project has not been approved yet</b></h2>
+        </div>
+    </div>
+</div>
+
+<div ng-if="project.status == 'Approved'">
+    <!-- main container starts -->
+    <div class="mainContainer" ng-if="(validProject == true) && (processing == false)">
+
+        <!-- inside container -->
+        <div class="container">
+
+            <!-- Title & Title paragraph starts -->
+            <div class="row">
+                <div align="center"><img src="../../Content/images/checkCloud.png"/></div>
+                <h1 class="titleText"><b>TrustCloud Certified.</b></h1>
+
+                <h2 class="titleText">Congratulations!</h2>
+            </div>
+            <!-- Title & Title paragraph ends -->
+
+            <div class="row">
+
+                <div class="col-md-3"></div>
+
+                <div class="col-md-7" style="margin-left:-30px">
+
+                    <h3 class="projSummaryText1">We've done our evaluation and have certified
+                        {{project.provider.name}}. Your {{project.job.type}} job is eligible for the PeerProtect
+                        guarantee.</h3>
+
+                    <div ng-if="buying == true">
+                        <div style="background-color:#fff;padding: 20px;opacity:1;border-radius: 10px; margin-left:200px;margin-right:238px">
+                            <div id="tc_logo" style="text-align: center;">
+                                <img src="../../Content/images/loading-spinner.gif">
+                            </div>
+                            <div id="tc_tit" style="text-align: center">Re-directing to PayPal...
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div style="padding-top:30px"></div>
+                <div class="row titleText"><b>&nbsp;&nbsp;&nbsp;Cost to guarantee {{project.job.cost | currency}} of
+                    {{project.job.type}} work from {{project.provider.name}}: {{project.job.plan_cost | currency}}</b>
+                </div>
+            </div>
+
+            <!-- button area starts -->
+            <div class="row" style="text-align:center;padding:20px">
+                <img ng-src="https://www.paypal.com/en_US/i/btn/btn_dg_pay_w_paypal.gif"
+                     ng-click="checkout()">
+            </div>
+
+            <div class="row">
+                <div style="padding-top:3px"></div>
+                <div class="row titleText">Proof of payment to service provider required for claim. Please see our <a
+                        ng-click="tc()">Terms and
+                    Conditions</a>
+                    for more details.
+                </div>
+            </div>
+
+
+            <!-- button area ends-->
+
+            <div style="padding-top:50px"></div>
+
+        </div>
+    </div>
+    <!-- bottom text area starts-->
+
+
+    <div class="mainContainer">
+
+        <div class="row">
+            <div class="container">
+
+
+                <div class="col-md-3"></div>
+
+                <div class="col-md-7" style="margin-left:-20px">
+
+                    <h2 class="titleText1">How the PeerProtect Guarantee Works</h2>
+
+
+                    <p class="text_inner">It's all about your satisfaction. If {{project.provider.name}}'s work falls
+                        short
+                        of your
+                        expectations, TrustCloud will make it right. This may include: </p><br/>
+
+
+                    <ul class="textBox2_inner">
+                        <li>Contacting {{project.provider.name}} on your behalf and arranging for them to come fix the
+                            work
+                            at our expense
+                        </li>
+                        <li>Sending another qualified service provider to fix the work</li>
+                        <li>Compensating you for any underperformance</li>
+                    </ul>
+
+                    <br/>
+
+                    <p class="text_inner">Your guarantee is in effect as of {{project.job.startdate | dt}} and continues
+                        for
+                        30 days
+                        thereafter.
+                        Claims must be filed within that period. You are covered for up to the cost of <br/>the job,
+                        {{project.job.cost | currency}}. We may require proof of work and payment to
+                        {{project.provider.name}}
+                        before accepting a claim. </p>
+                    <!-- bottom text area starts-->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- main container ends -->
+
+
+
+

@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<!-- main container starts -->
+<div class="mainContainer">
+
+    <modal-dialog show='showTandC' dialog-title='PEER PROTECT TERMS AND CONDITIONS'>
+        <p ng-bind-html="t_and_c_text"></p>
+    </modal-dialog>
+
+
+    <!-- inside container -->
+    <div class="container">
+
+        <div id="outer" ng-show="processing">
+            <div id="inner2" style="margin-left: 37%;
+                                    margin-top: 12%;
+                                    position: absolute;z-index: 9999999999;text-align:center">
+                <div style="background-color:#fff;padding: 20px;opacity:1;border-radius: 10px; margin-left:60px">
+                    <div id="tc_logo">
+                        <img src="../../Content/images/loading-spinner.gif">
+                    </div>
+                    <div id="tc_tit">Submitting Project Details...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Title & Title paragraph starts -->
+        <div class="row">
+            <h1 class="titleText">Step 1: Tell us about your project</h1>
+            <h4 class="bodyText">In order for us to offer you a PeerProtect<sup>TM</sup> service guarantee, we'll
+                need<br> to know a little more about your project and
+                service provider. Please fill out the following<br> information as
+                accurately as possible, so we can certify the contractor. </h4>
+        </div>
+        <!-- Title & Title paragraph ends -->
+
+
+        <!-- form container starts -->
+        <div class="formContainer">
+            <form name="form" ng-submit="completed_step_1()">
+
+                <!-- form row 1 starts -->
+                <div class="row">
+                        <div class="col-md-4 mb3p">
+                            <select id="type_of_job" ng-model="project.job.type" class="form-control input-large"
+                                    style="color:#A8A8A8">
+                                <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+                            </select>
+
+                            <p class="text-error ng-hide" ng-show="job_type_invalid">
+                                <br>Please choose a project type</p>
+
+                        </div>
+                        <div class="col-md-4 mb3p">
+                            <quick-datepicker ng-model='project.job.startdateraw'
+                                              label-format='MMM-dd-yyyy' icon-class='fa fa-calendar'
+                                              date-filter='beforeToday'
+                                              disable-timepicker='true'></quick-datepicker>
+                            <p class="text-error" ng-show="job_date_invalid">
+                                <br>Please choose a start date for the job</p>
+
+
+                        </div>
+                        <div class="col-md-4 mb3p">
+                            <input type="text" class="form-control input-large" name="cost"
+                                   id="cost" ng-model="project.job.cost"
+                                   placeholder="Est. Project Cost*" ui-money-mask="2" required>
+
+                            <p class="text-error ng-hide" ng-show="form.cost.$error.number">
+                                Enter Cost as a number</p>
+
+                            <p class="text-error ng-hide" ng-show="job_cost_invalid">
+                                <br>Maximum Job Cost For PeerProtect Guarantee is {{job_cost_limit | currency}}</p>
+							
+                        </div>
+
+                </div>
+                <!-- form row 1 ends -->
+
+
+                <!-- form row 2 starts -->
+                <div class="row">
+                        <div class="col-md-12 mb3p">
+                            <input type="text" class="form-control input" ng-model="project.job.description"
+                                   placeholder="Description (Optional)">
+                        </div>
+                </div>
+                <!-- form row 2 ends -->
+
+
+                <!-- form row 3 starts -->
+                <div class="row">
+                        <div class="col-md-6 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.provider.name"
+                                   placeholder="Business Name" required>
+                        </div>
+                        <div class="col-md-6 mb3p">
+                            <input type="text" min="10" ng-minlength="10" class="form-control input-large"
+                                   name="provider_phone" ng-model="project.provider.phone"
+                                   placeholder="Business Phone"
+                                   ui-mask="{{'(999) 999-9999'}}" required>
+
+                            <p class="text-error ng-hide" ng-show="form.provider_phone.$error.tel">
+                                Enter a 10-digit phone number (999) 999-9999</p>
+                        </div>
+                </div>
+                <!-- form row 3 ends -->
+
+
+                <!-- form row 4 starts -->
+                <div class="row">
+                        <div class="col-md-6 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.provider.ownername"
+                                   placeholder="Business Owner Name (Optional)">
+                        </div>
+                        <div class="col-md-6 mb3p">
+                            <input type="email" class="form-control input-large" ng-model="project.provider.email"
+                                   placeholder="Business Email (Optional)">
+                        </div>
+
+                </div>
+                <!-- form row 4 ends -->
+
+
+                <!-- form row 5 starts -->
+                <div class="row">
+                        <div class="col-md-12 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.provider.address1"
+                                   placeholder="Business Address" required>
+                        </div>
+                </div>
+                <!-- form row 5 ends -->
+
+
+                <!-- form row 6 starts -->
+                <div class="row">
+                        <div class="col-md-6 mb3p">
+                            <input type="text" class="form-control input-large" ng-model="project.provider.city"
+                                   placeholder="City" required>
+                        </div>
+                        <div class="col-md-3 mb3p">
+                            <select class="form-control input-small" data-role="listview" data-inset="true"
+                                    ng-options="state.name as state.value for state in states"
+                                    ng-model="project.provider.state" placeholder="State" required
+                                    style="color:#A8A8A8"></select>
+                        </div>
+
+                        <div class="col-md-3 mb3p">
+                            <input type="text" class="form-control input-medium" ng-model="project.provider.zip"
+                                   placeholder="Zip" required>
+                        </div>
+				</div>
+                <!-- form row 6 ends -->
+
+
+                <div style="padding-top:40px"></div>
+
+                <div class="btnBox">
+                    <input type="submit" class="btn btnGetStarted" style="padding-left:30px;padding-right:30px"
+                           value="Next"/>
+                </div>
+
+
+                <div style="padding-top:20px"></div>
+                <h6>* Proof of payment to service provider required for claim. Please see our <a ng-click="tc()">Terms and
+                    Conditions</a>
+                    for more &nbsp;&nbsp;details.</h6>
+
+            </form>
+        </div>
+        <!-- form container ends -->
+
+
+    </div>
+
+</div>
+
+
+<!-- main container ends -->
+
+

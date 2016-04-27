@@ -1,0 +1,5 @@
+curl -X POST -d "{\"Job\":{\"Type\":\"Painter\",\"Cost\":\"100\", \"startdate\": \"1/1/2015\"}, \"Provider\":{\"Name\":\"Acme\",\"Phone\":\"415-777-7777\",\"Zip\":\"94105\",\"Type\":\"I\",\"Email\":\"bob@acme.com\",
+\"Address1\":\"1 Main St\",\"Address2\":\"Suite 100\",\"City\":\"San Francisco\",\"State\":\"CA\", \"ownername\": \"Bob\"},
+\"User\":{\"FirstName\":\"Bob\",\"LastName\":\"Smith\",\"Zip\":\"94117\",
+\"Address1\":\"1 Broad St\",\"Address2\":\"Apt 1\",\"City\":\"San Francisco\",\"State\":\"CA\",\"Phone\":\"415-888-8888\", \"Email\":\"joe@customer.com\" }" "http://localhost:4730/project"
+

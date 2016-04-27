@@ -1,0 +1,110 @@
+<div class="footer-widgets">
+    <div class="wrap">
+        <div ng-switch on="loginStatus">
+
+            <div ng-switch-when="true">
+                <div class="well" style="margin-left: 10px; margin-right: 10px">
+                    <div class="row">
+                        <div class="col-md-7"></div>
+                        <div class="col-md-5" style="text-align: right;">
+                            <strong>Welcome, {{loggedInUser}}</strong>
+                            &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary" style="width:100px"
+                                    ng-click="logout()">Logout</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container full_width">
+                    <div class="row centered-form" style="padding-bottom:80px">
+                        <div style="clear:both;"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>Home Service Projects</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="well">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label class="control-label">Status</label>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <select ng-model="search.status" class="form-control input-small">
+                                                    <option ng-repeat="type in types" value="{{type}}">{{type}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <button type="button" id="btnFilter" onClick="filterList();"
+                                                        class="btn btn-primary"
+                                                        style="width:100px" data-loading-text="filtering...">Filter
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <table class="table table-hover" id="ResultsTable">
+                                    <thead>
+                                    <tr>
+                                        <th width="\&quot;10%\&quot;">Project Id</th>
+                                        <th width="\&quot;10%\&quot;">Encoded Id</th>
+                                        <th width="\&quot;10%\&quot;">Submitter</th>
+                                        <th width="\&quot;15%\&quot;">Provider Name</th>
+                                        <th width="\&quot;12%\&quot;">Job Type</th>
+                                        <th width="\&quot;10%\&quot;">Cost</th>
+                                        <th width="\&quot;15%\&quot;">Start Date</th>
+                                        <th width="\&quot;10%\&quot;">Status</th>
+                                        <th width="\&quot;10%\&quot;">&nbsp;</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr dir-paginate="project in saved_projects | filter:search | itemsPerPage: pageSize"
+                                        current-page="currentPage">
+                                        <td>{{project.id}}</td>
+                                        <td>{{project.encoded_id}}</td>
+                                        <td>{{project.first_name}} {{project.last_name}}</td>
+                                        <td>{{project.provider_name}}</td>
+                                        <td>{{project.type}}</td>
+                                        <td class="text-align: right;">{{project.cost | curr}}</td>
+                                        <td>{{project.start_date | dt}}</td>
+                                        <td>{{project.status}}</td>
+
+                                        <td>
+                                            <button type="button" id="view" ng-click="view(project.id)"
+                                                    class="btn btn-primary" style="width:80px; height:30px;">View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div>
+                                <div class="text-center">
+                                    <dir-pagination-controls boundary-links="true"
+                                                             template-url="app/bower_components/dirPagination/dirPagination.tpl.html">
+
+                                    </dir-pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-default>
+                <p>You need to <a href="#/admin">log in</a> first</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
